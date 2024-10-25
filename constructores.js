@@ -11,5 +11,5 @@ function Libro(title, autor, pages, read) {
 const hobbit = new Libro ('the hobbit', 'Tolkien', '295 pages', 'no read');
 console.log(hobbit.info()); 
 
-
+export {hobbit};
 

@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.sidebar {
+    width: 200px;
+}
+
+.main {
+    flex: 1;
+}
+
+#projectList, #taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+button {
+    margin-top: 10px;
+}
