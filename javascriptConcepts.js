@@ -47,10 +47,28 @@ class Animal {
 }
 //la palabra extend de la clase Dog indica que la clase Dog hereda de la clase Animal
 class Dog extends Animal {
+    constructor(name, raza) {
+        super(name); //llama al constructor de la clase padre
+        this.raza = raza;
+    }
     speak() {
-        console.log(`${this.name} ladra.`);
+        console.log(`${this.name} ladra y es de raza ${this.raza}.`);
     }
 }
 
 let perro = new Dog('Buddy');
 perro.speak(); // Buddy ladra.
+
+//Metodos estaticos 
+
+    class MathUtils {
+        static sum(a, b) {
+            return a + b;
+        }
+        static multiply(a, b) {
+            return a * b;
+        }
+    }
+    //Al tener metodos estaticos poemos llamarlos sin necesidad de guardarlos en otra variable 
+    console.log(MathUtils.sum(2, 3)); // 5
+    console.log(MathUtils.multiply(2, 3)); // 6
