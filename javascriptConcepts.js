@@ -1,13 +1,22 @@
 //Ejemplo de clases, sirve como plantilla para crear más variable que contenga las necesidades que se detallaron en el constructor. 
     class Libro {
+        #autor; // utilizando el símbolo de numeral para indicar que la propiedad es privada en JavaScript.
         constructor(title, autor, pages, read) {
             this.title = title;
-            this.autor = autor;
+            this.#autor = autor;
             this.pages = pages;
             this.read = read;
         }
         info() {
             console.log(`el nombre del libro es ${this.title}, su autor es: ${this.autor}, contiene un total de ${this.pages} y lo has leido ${this.read}`);
+        }
+        //Acceso a las propiedades privadas con getter y setter
+        get autor() {
+            return this.#autor;
+        }
+        //para editar las propiedades privadas 
+        set autor(newAutor) {
+            this.#autor = newAutor;
         }
     }
 
@@ -23,3 +32,25 @@
     console.log(libro1.read);
     libro1.info();
 
+console.log(libro1.getAutor());
+console.log(libro1.setAutor('soy tu hijo'));
+console.log(libro1.getAutor());
+
+//La herencia en javascript
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    speak() {
+        console.log(`${this.name} hace un ruido.`);
+    }
+}
+//la palabra extend de la clase Dog indica que la clase Dog hereda de la clase Animal
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} ladra.`);
+    }
+}
+
+let perro = new Dog('Buddy');
+perro.speak(); // Buddy ladra.
